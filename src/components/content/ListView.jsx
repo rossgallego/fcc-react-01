@@ -7,11 +7,16 @@ class ListView extends Component {
 		this.populateViews = this.populateViews.bind(this);
 	}
 
+	cleanQuote(quote){
+		return quote.replace("<p>","").replace("</p>","");
+	}
+
 	populateViews() {
 		return this.props.quotes.map((quote, index) => {
 			return (
 				<div className="item" key={quote.ID}>
 					<img className="item-pic" src={this.props.pics[index].urls.regular} alt={quote.content} />
+					<p>{this.cleanQuote(quote.content)}</p>
 				</div>
 			);
 		});

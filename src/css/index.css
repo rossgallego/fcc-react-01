@@ -10,10 +10,14 @@ html,body,#root,.landing,.App{
 }
 
 .item{
-	height: 225 px;
-	width: 400 px;
+	position: relative;
+	width: 80%;
 	padding: 20px;
-	margin-top: 30px;
+	margin : 30px auto 0px auto;
+}
+
+.item-pic{
+	max-width: 100%;
 }
 
 .spinner{
