@@ -13,14 +13,14 @@ function getQuotes(){
 }
 
 function getPictures(pageNo){
-	return unsplash.photos.list(pageNo,10).then(toJson);
+	return unsplash.photos.listPhotos(pageNo,10).then(toJson);
 }
 
 function getContent(pageNo,callback){
 	axios.all([getQuotes(),getPictures(pageNo)])
 		.then(axios.spread((quotes,pics)=>{
 			//we have both quotes and pics here
-			console.log(quotes,pics);
+			callback(quotes.data,pics);
 		}));
 }
 
