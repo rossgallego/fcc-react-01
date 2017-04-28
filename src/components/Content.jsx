@@ -1,21 +1,29 @@
 import React,{Component} from "react";
-import apicalls from "../utils/apicalls";
+import getContent from "../utils/apicalls";
 
 class Content extends Component{
 
 	constructor(props){
 		super(props);
 		this.state = {
-			hasContent : false
+			hasContent : false,
+			pageNo : 1
 		};
+		this.gotContent = this.gotContent.bind(this);
+	}
+
+	gotContent(quotes,pics){
+		//do nothing
 	}
 
 	componentWillMount(){
-		apicalls
+		getContent(this.state.pageNo,this.gotContent);
 	}
 
 	render(){
-
+		return (
+			<div> Working </div>
+		);
 	}
 
 }
