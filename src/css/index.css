@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script|Indie+Flower|Kaushan+Script|Lobster|Pacifico');
+
 body {
 	margin: 0;
 	padding: 0;
@@ -11,10 +13,36 @@ html,body,#root,.landing,.App{
 }
 
 .item{
-	height: 225px;
-	width: 400px;
+
+	position: relative;
+	width: 80%;
 	padding: 20px;
-	margin-top: 30px;
+	margin : 30px auto 0px auto;
+}
+
+.item-pic{
+	max-width: 100%;
+}
+
+.item-quote{
+	position: absolute;
+	z-index: 1;
+	margin: auto;
+	transform: translate(-50%,-50%);
+	top : 50%;
+	left: 50%;
+	font-size: 30px;
+	text-align: center;
+	color: white;
+	background-color: rgba(11, 11, 11, 0.5);
+	padding: 10px;
+	border-radius: 3px;
+}
+
+@media only screen and (max-width: 500px) {
+	.item-quote{
+		font-size: 14px;
+	}
 }
 
 .flex-container {
