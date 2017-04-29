@@ -10,8 +10,9 @@ class ListView extends Component {
 	populateViews() {
 		return this.props.quotes.map((quote, index) => {
 			return (
-				<div className="item" key={quote.ID}>
-					<img className="item-pic" src={this.props.pics[index].urls.regular} alt={quote.content} />
+				<div className="flex-item" key={quote.ID}>
+					<img className="flex-image" src={this.props.pics[index].urls.regular} alt={quote.content} />
+					<p>{quote.content.replace(/(<([^>]+)>)/ig,"")}</p>
 				</div>
 			);
 		});
@@ -19,7 +20,7 @@ class ListView extends Component {
 
 	render() {
 		return (
-			<div className="items-holder">
+			<div className="items-holder flex-container">
 				{this.populateViews()}
 			</div>
 		);
